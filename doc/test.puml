@@ -1,0 +1,21 @@
+@startuml
+(*)  --> "AndroidBuilder.runDexer()"
+if "是否在当前进程执行" then
+--> [y] "dexInProcess()"
+--> "Main.run()"
+if "是否支持multidex" then
+--> [y] "runMultiDex()"
+--> "processAllFiles()"
+--> "遍历所有文件，执行processOne()"
+--> "从文件获取byte[]"
+--> "转化byte[]为ClassDefItem"
+--> "添加ClassDefItem到outputDex"
+--> "当method或field个数超过限制时，将outputDex转换并创建新的dex文件"
+else
+-->[n] "runMonoDex()"
+endif
+else
+-->[n] "dexOutOfProcess()"
+endif
+-->(*)
+@enduml

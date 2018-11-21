@@ -1,0 +1,16 @@
+@startuml
+
+
+(*) --> "AndroidBuilder.runDexer()"
+if "是否在当前进程执行" then
+  ->[y] "dexInProcess()"
+  --> "Main.run()"
+  if "是否支持multidex" then
+    -->[y] "runMultiDex()"
+    else -->[n] "runMonoDex"
+    endif
+else -->[n] "dexOutOfProcess()"
+endif
+-->(*)
+
+@enduml
