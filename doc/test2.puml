@@ -1,0 +1,8 @@
+@startuml
+(*)  --> "DexMergerTransform.handleLegacyAndMonoDex"
+--> "获取输入文件的集合"
+--> "DexMergerTransformCallable回调,根据是dx还是d8获取对应的DexArchiveMerger"
+--> "DxDexArchiveMerger.mergeMultidex()"
+--> "提交任务，执行dexMerger.merge()操作"
+-->(*)
+@enduml

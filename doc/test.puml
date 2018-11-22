@@ -1,6 +1,6 @@
 @startuml
 (*)  --> "AndroidBuilder.runDexer()"
-if "是否在当前进程执行" then
+if "是否允许多个DEX 进程运行在一个单独的VM 中" then
 --> [y] "dexInProcess()"
 --> "Main.run()"
 if "是否支持multidex" then

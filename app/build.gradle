@@ -34,17 +34,29 @@ dependencies {
 
 apply plugin: 'hello'
 apply plugin: 'time'
+apply plugin: 'predex'
 buildscript {
     repositories {
         maven {
             url uri('../repo')
         }
+        google()
+        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.fcl.plugin:mylibrary:1.0.0'
     }
 }
 
-task hello {
+task hello2 {
     println('hello gradle 2')
+}
+task hello3 << {
+    println('hello gradle 3')
+}
+task hello4 {
+    doLast {
+        println('hello gradle 4 last')
+    }
 }

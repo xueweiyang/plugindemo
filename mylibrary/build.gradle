@@ -2,12 +2,23 @@ apply plugin: 'groovy'
 apply plugin: 'maven'
 
 dependencies {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+        google()
+    }
     compile gradleApi()
     compile localGroovy()
+    compile 'com.android.tools.build:gradle:3.0.1'
+    compile 'com.android.tools.build:transform-api:1.5.0'
 }
 
 repositories {
-    mavenCentral()
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    jcenter()
+    google()
 }
 group='com.fcl.plugin'
 version='1.0.0'

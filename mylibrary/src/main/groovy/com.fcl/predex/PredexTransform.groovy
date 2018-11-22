@@ -1,4 +1,4 @@
-package com.fcl.hotfix
+package com.fcl.predex
 
 import com.android.build.api.transform.Context
 import com.android.build.api.transform.QualifiedContent
@@ -9,11 +9,11 @@ import com.android.build.api.transform.TransformInvocation
 import com.android.build.api.transform.TransformOutputProvider
 import com.android.build.gradle.internal.pipeline.TransformManager
 
-public class HotfixTransform extends Transform {
+public class PredexTransform extends Transform {
 
     @Override
     String getName() {
-        return "hotfix"
+        return "predex"
     }
 
     @Override

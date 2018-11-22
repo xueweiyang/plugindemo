@@ -28,7 +28,9 @@ class TimeListener implements TaskExecutionListener, BuildListener {
     @Override
     void buildFinished(BuildResult buildResult) {
         for (time in times) {
-                printf("%7sms %s\n", time)
+            if (time[0] > 50) {
+//                printf("%7sms %s \n", time)
+            }
         }
     }
 
@@ -40,7 +42,14 @@ class TimeListener implements TaskExecutionListener, BuildListener {
     @Override
     void afterExecute(Task task, TaskState taskState) {
         def ms = clock.getTime()
-        times.add([ms, task.path])
+        times.add([ms, task.name])
+        if (ms>100) {
+            println("task${task.name}-----------------\n")
+            task.inputs.files.files.each {file->
+                printf("${file.absolutePath}\n")
+            }
+            println("task${task.name}-----------------\n")
+        }
 
     }
 }
