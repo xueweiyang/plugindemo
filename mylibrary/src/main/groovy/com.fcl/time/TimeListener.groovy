@@ -44,11 +44,11 @@ class TimeListener implements TaskExecutionListener, BuildListener {
         def ms = clock.getTime()
         times.add([ms, task.name])
         if (ms>100) {
-            println("task${task.name}-----------------\n")
-            task.inputs.files.files.each {file->
-                printf("${file.absolutePath}\n")
-            }
-            println("task${task.name}-----------------\n")
+//            println("task${task.name}-----------------\n")
+//            task.inputs.files.files.each {file->
+//                printf("${file.absolutePath}\n")
+//            }
+//            println("task${task.name}-----------------\n")
         }
 
     }
