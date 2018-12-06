@@ -22,6 +22,7 @@ public class WebpPlugin implements Plugin<Project> {
                     println("skipdebug webpConvertPlugin Task!!!")
                     return
                 }
+                println("dx name:process${variant.name.capitalize()}Resources")
                 def dx = project.tasks.findByName("process${variant.name.capitalize()}Resources")
                 def webpConvertPlugin = "webpConvertPlugin${variant.name.capitalize()}"
                 project.task(webpConvertPlugin) << {
