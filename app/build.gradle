@@ -35,7 +35,8 @@ dependencies {
 apply plugin: 'hello'
 apply plugin: 'time'
 apply plugin: 'predex'
-apply plugin: 'webp'
+//apply plugin: 'webp'
+apply plugin: 'tiny'
 buildscript {
     repositories {
         maven {
